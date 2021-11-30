@@ -62,5 +62,7 @@ def download_by_doiorserial(ditem):
 if __name__ == "__main__":
     # 10.1021/acs.chemmater.1c02683 scihub无 arxiv有
     # 10.1016/j.physleta.2021.12770 都没有
+    doi = '10.1016/0167-2789(93)90120-P'
+    download_by_doiorserial(doi)
     download_by_file('./test')
     download_by_file('./resources/dois&serials.txt')

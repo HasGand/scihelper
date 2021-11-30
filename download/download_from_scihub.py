@@ -54,7 +54,7 @@ def get_pdf_url(html):
     此处可能需要维护
     """
     # pattern = '.*<embed type="application/pdf" src=".*(//.*?pdf).*id = "pdf">.*'
-    pattern = '.*http.*?//(.*?sci-hub.*?pdf).*?(download=true).*'
+    pattern = '.*//(.*?sci-hub.*?pdf).*?(download=true).*'
     try:
         res = re.match(pattern, html, re.S)
         pdf_url = 'https://' + res.group(1)
@@ -97,6 +97,8 @@ if __name__ == "__main__":
     doi = '10.1038/s41699-018-0085-z'
     doi = '10.1016/j.cpc.2021.108180'  # 不存在
     doi = '10.1016/j.physe.2021.114925'
+    doi = '10.1016/0003-4916(85)90148-4'
+    doi = '10.1016/0167-2789(93)90120-P'
     html_url = generate_html_url(doi)
     html = get_html(html_url)
     pdf_url = get_pdf_url(html)
