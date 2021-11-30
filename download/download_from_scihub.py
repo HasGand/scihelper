@@ -54,7 +54,7 @@ def get_pdf_url(html):
     此处可能需要维护
     """
     # pattern = '.*<embed type="application/pdf" src=".*(//.*?pdf).*id = "pdf">.*'
-    pattern = '.*http.*?//(.*?sci-hub.*?pdf).*?(download=true).*'
+    pattern = '.*//(.*?sci-hub.*?pdf).*?(download=true).*'
     try:
         res = re.match(pattern, html, re.S)
         pdf_url = 'https://' + res.group(1)
